@@ -1,3 +1,6 @@
+## Google Play
+https://play.google.com/store/apps/details?id=com.animefinder
+
 ## Features
 - Search for anime by picture
 - Uses https://soruly.github.io/trace.moe API
