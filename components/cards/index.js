@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, View, DeckSwiper, Text, Icon, Button } from 'native-base';
 import { TitleCard } from './card'
-import { styles, getPreview } from '../../constants'
+import { getPreview } from '../../constants'
+import { styles } from '../../styles'
 
 export default class TitleCardList extends Component {
     render() {
