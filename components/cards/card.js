@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { Card, CardItem, Thumbnail, Text, Left, Body } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
 
 export const TitleCard = ({ image, episode, name, similarity }) => {
     return (
