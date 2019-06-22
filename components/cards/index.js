@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
-import { Container, View, DeckSwiper, Text, Icon } from 'native-base';
+import { Container, Spinner, View, DeckSwiper, Text, Icon, Button } from 'native-base';
 import { TitleCard } from './card'
+import { styles, getPreview } from '../../constants'
 
 export default class TitleCardList extends Component {
     render() {
         return (
             <Container>
-                <DeckSwiper
-                    ref={(c) => this._deckSwiper = c}
-                    dataSource={cards}
-                    renderEmpty={() =>
-                        <View style={{ alignSelf: "center" }}>
-                            <Text>Over</Text>
-                        </View>
-                    }
-                    renderItem={item => <TitleCard image={item.image} text={item.text} name={item.name} /> }
-                />
-                <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 50, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+                <View style={styles.container}>
+                    <DeckSwiper
+                        ref={(c) => this._deckSwiper = c}
+                        dataSource={this.props.titles}
+                        renderEmpty={() =>
+                            <View style={{ alignSelf: "center" }}>
+                                <Text>Choose picture</Text>
+                            </View>
+                        }
+                        renderItem={title => 
+                            <TitleCard 
+                                image={getPreview(title)} 
+                                episode={title.episode} 
+                                name={title.title_english} 
+                                similarity={title.similarity} 
+                            /> 
+                        }
+                    />
+                </View>
+                {this.props.titles.length > 0 &&
+                <View style={styles.rowElements}>
                     <Button iconLeft onPress={() => this._deckSwiper._root.swipeLeft()}>
                         <Icon name="arrow-back" />
-                        <Text>Swipe Left</Text>
+                        <Text>Previous</Text>
                     </Button>
                     <Button iconRight onPress={() => this._deckSwiper._root.swipeRight()}>
                         <Icon name="arrow-forward" />
-                        <Text>Swipe Right</Text>
+                        <Text>Next</Text>
                     </Button>
                 </View>
+                }
             </Container>
         );
     }
