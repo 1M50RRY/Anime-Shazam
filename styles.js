@@ -6,12 +6,8 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-        position: 'absolute',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginTop: height / 1.19,
-        marginLeft: width / 2.40
+        backgroundColor: '#843c82',
+        textAlignVertical: 'center',
     },
     rowElements: {
         flexDirection: "row",
@@ -26,9 +22,13 @@ export const styles = StyleSheet.create({
     selectImageButton: {
         alignSelf: 'center',
         elevation: 4,
-        height: 70,
-        width: 70,
-        borderRadius: 35,
-        justifyContent: 'center'
+        height: 140,
+        width: 140,
+        borderRadius: 70,
+        justifyContent: 'center',
+        backgroundColor: '#9d629a'
+    },
+    btnIcon: {
+        fontSize: 50
     }
 });
